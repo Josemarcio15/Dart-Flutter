@@ -2,7 +2,7 @@
 
 Aprendendo a criar um crud com lista de exercicios e mais
 
-# RoadMap
+# TimeLine
 
 Dia 1: 1 - Git/GitHub
 
