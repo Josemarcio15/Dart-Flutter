@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () => GoRouter.of(context).push('/cadastro'),
-                child: Text('Cadastro'),
+                child: Text('Cadastro de clientes'),
               ),
             ],
           ),
