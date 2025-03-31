@@ -1,44 +1,55 @@
 import 'package:flutter/material.dart';
+import './questao.dart';
 
-void main() {
-  runApp(PerguntaApp());
-}
+void main() => runApp(const PerguntaApp());
 
-class PerguntaApp extends StatelessWidget {
-  PerguntaApp({super.key});
+class _PerguntaAppState extends State<PerguntaApp> {
+  var _perguntaSelecionada = 0;
 
-  var perguntaSelecionada = 0;
-  void responder() {
-    perguntaSelecionada++;
-    print('pergunta respondida $perguntaSelecionada');
+  void _responder() {
+    setState(() {
+      _perguntaSelecionada++;
+    });
+    print(_perguntaSelecionada);
   }
 
   @override
   Widget build(BuildContext context) {
     final perguntas = [
-      'qual é a sua cor favorita?',
-      'qual é a sua aniaml favorito?',
+      'Qual é a sua cor favorita?',
+      'Qual é o seu animal favorito?',
     ];
 
     return MaterialApp(
-      theme: ThemeData.dark(),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Perguntas app"),
-          backgroundColor: Colors.blue,
-        ),
+        appBar: AppBar(title: const Text('Perguntas')),
         body: Column(
-          children: <Widget>[
-            Text(perguntas[0]),
+          children: [
+            Questao(perguntas[_perguntaSelecionada]),
             ElevatedButton(
-              onPressed: responder,
-              child: Text(perguntas[perguntaSelecionada]),
+              onPressed: _responder,
+              child: const Text('Resposta 1'),
             ),
-            ElevatedButton(onPressed: responder, child: Text("Respota 2")),
-            ElevatedButton(onPressed: responder, child: Text("Respota 3")),
+            ElevatedButton(
+              onPressed: _responder,
+              child: const Text('Resposta 2'),
+            ),
+            ElevatedButton(
+              onPressed: _responder,
+              child: const Text('Resposta 3'),
+            ),
           ],
         ),
       ),
     );
+  }
+}
+
+class PerguntaApp extends StatefulWidget {
+  const PerguntaApp({super.key});
+
+  @override
+  _PerguntaAppState createState() {
+    return _PerguntaAppState();
   }
 }
