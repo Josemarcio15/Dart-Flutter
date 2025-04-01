@@ -18,17 +18,29 @@ class HomePage extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () => GoRouter.of(context).push('/cadastro'),
-                child: Text('Cadastrar Clientes'),
+              SizedBox(
+                height: 50,
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () => GoRouter.of(context).push('/cadastro'),
+                  child: Text('Cadastrar Clientes'),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () => GoRouter.of(context).push('/cadastro'),
-                child: Text('Cadastrar Exercicios'),
+              SizedBox(
+                height: 50,
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () => GoRouter.of(context).push('/cadastro'),
+                  child: Text('Cadastrar Exercicios'),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () => GoRouter.of(context).push('/login'),
-                child: Text('Login'),
+              SizedBox(
+                height: 50,
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () => GoRouter.of(context).push('/login'),
+                  child: Text('Login'),
+                ),
               ),
             ],
           ),
