@@ -26,6 +26,10 @@ class HomePage extends StatelessWidget {
                 onPressed: () => GoRouter.of(context).push('/cadastro'),
                 child: Text('Cadastrar Exercicios'),
               ),
+              ElevatedButton(
+                onPressed: () => GoRouter.of(context).push('/login'),
+                child: Text('Login'),
+              ),
             ],
           ),
         ],
