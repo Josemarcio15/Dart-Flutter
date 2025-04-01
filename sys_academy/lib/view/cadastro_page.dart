@@ -8,7 +8,7 @@ class CadastroPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Cadastro Page'),
+        title: Text('Cadastro de Clientes'),
         centerTitle: true,
       ),
     );

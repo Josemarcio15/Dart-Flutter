@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:sys_academy/cadastro_page.dart';
-import 'package:sys_academy/home_page.dart';
+import 'package:sys_academy/view/cadastro_page.dart';
+import 'package:sys_academy/view/home_page.dart';
 
 final routes = GoRouter(
   routes: [
