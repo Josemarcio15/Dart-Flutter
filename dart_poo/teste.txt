@@ -24,7 +24,7 @@ Antes de mergulhar no Flutter, é essencial dominar o Dart.
 ✅ Classes e Objetos
 ⚠️ Construtores e Factory Constructors
 ✅ Herança e Polimorfismo
-❌ Interfaces e Mixins
+✅ Interfaces e Mixins
 ❌ Tratamento de Exceções (try-catch)
 ❌ Manipulação de arquivos e JSON
 
