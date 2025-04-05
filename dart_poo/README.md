@@ -6,8 +6,11 @@ Antes de mergulhar no Flutter, é essencial dominar o Dart.
 🔹 Dia 05 abr 2025: Introdução ao Dart
 
 ✅ Instalação do Dart SDK e configuração do ambiente
+
 ✅ Estrutura básica de um programa em Dart
+
 ✅ Variáveis e tipos de dados (int, double, String, bool, List, Map)
+
 ✅ Operadores aritméticos, relacionais e lógicos
 
 🔹 Dia 05 abr 2025: Controle de Fluxo e Funções
