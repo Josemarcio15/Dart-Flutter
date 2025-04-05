@@ -1,6 +1,6 @@
 mixin Cilindrada {
   int potencia = 0;
-  int potenciaDaMoto(int cm) {
+  int potenciaDaMoto(int potencia) {
     return this.potencia;
   }
 }

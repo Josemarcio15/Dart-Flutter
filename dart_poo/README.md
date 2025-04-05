@@ -4,7 +4,7 @@
 
 Antes de mergulhar no Flutter, é essencial dominar o Dart.
 
-🔹 Dia 05 abr 2025: Introdução ao Dart
+🔹 Dia - abril 2025: Introdução ao Dart
 
 ✅ Instalação do Dart SDK e configuração do ambiente
 
@@ -14,7 +14,7 @@ Antes de mergulhar no Flutter, é essencial dominar o Dart.
 
 ✅ Operadores aritméticos, relacionais e lógicos
 
-🔹 Dia 05 abr 2025: Controle de Fluxo e Funções
+🔹 Dia - abril 2025: Controle de Fluxo e Funções
 
 ✅ Condicionais (if, switch-case)
 
@@ -27,7 +27,7 @@ Antes de mergulhar no Flutter, é essencial dominar o Dart.
 ✅ Parâmetros opcionais e nomeados
 
 
-🔹 Dia 05 abr 2025: Orientação a Objetos em Dart
+🔹 Dia 05 abril 2025: Orientação a Objetos em Dart
 
 ✅ Classes e Objetos
 
