@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdv_oficina/pages/vendas/widgets/codigo_barras.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/lista_produtos.dart';
 import 'package:pdv_oficina/shared/sidebar.dart';
 
@@ -16,20 +17,8 @@ class _VendasState extends State<Vendas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('Vendas'),
-        leading: IconButton(
-          onPressed: () {
-            setState(() {
-              expandida = !expandida;
-            });
-          },
-          icon: const Icon(Icons.menu),
-        ),
-      ),
       body: Container(
-        color: Colors.green,
+        color: const Color.fromARGB(255, 33, 159, 243),
         child: Row(
           children: [
             Sidebar(
@@ -46,9 +35,15 @@ class _VendasState extends State<Vendas> {
                 children: [
                   Row(
                     children: [
+                      // Widget Caixa Aberto
                       Expanded(
                         child: Container(
-                          color: Colors.amber,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.blue, width: 10),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+
                           child: SizedBox(
                             height: 50,
                             child: Center(child: Text("CAIXA ABERTO")),
@@ -57,26 +52,40 @@ class _VendasState extends State<Vendas> {
                       ),
                     ],
                   ),
+
                   Expanded(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Widget Lista de Produtos
                         Container(
-                          color: Colors.white,
-                          child: SizedBox(width: 700, child: ListaProdutos()),
+                          color: Colors.blue,
+                          child: SizedBox(
+                            width: 700,
+                            height: 500,
+                            child: ListaProdutos(),
+                          ),
                         ),
+                        // Widget codigo de barras
                         Container(
                           color: Colors.grey,
-                          child: SizedBox(height: 400, width: 100),
+                          child: SizedBox(
+                            height: 299,
+                            width: 200,
+                            child: CodigoBarras(),
+                          ),
                         ),
+                        // Widget
                         Container(
                           color: Colors.red,
                           child: SizedBox(height: 400, width: 100),
                         ),
+                        // Widget
                         Container(
                           color: Colors.lime,
                           child: SizedBox(height: 400, width: 300),
                         ),
+                        // Widget
                         Container(
                           color: Colors.blue,
                           child: SizedBox(height: 400, width: 300),

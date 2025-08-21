@@ -17,20 +17,21 @@ class _ListaProdutosState extends State<ListaProdutos> {
       children: [
         // Cabeçalho fixo
         Container(
-          color: Colors.blueAccent,
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+          //color: Colors.blueAccent,
+          //padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(9), // bordas arredondadas
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 5,
-                  offset: Offset(0, 2),
-                ),
-              ],
+              color: Colors.blue[800],
+              borderRadius: BorderRadius.circular(3),
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.black12,
+              //     blurRadius: 5,
+              //     offset: Offset(0, 2),
+              //   ),
+              // ],
             ),
+
             child: Row(
               children: const [
                 Expanded(
@@ -67,6 +68,7 @@ class _ListaProdutosState extends State<ListaProdutos> {
             ),
           ),
         ),
+
         // Lista de produtos
         Expanded(
           child: Container(
