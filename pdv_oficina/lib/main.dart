@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pdv_oficina/pages/Vendas.dart';
+import 'package:pdv_oficina/pages/vendas/vendas.dart';
 
 void main() {
   runApp(const MyApp());

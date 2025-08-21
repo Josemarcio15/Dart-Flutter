@@ -20,10 +20,13 @@ class Sidebar extends StatelessWidget {
       selectedIndex: indiceSelecionado,
       onDestinationSelected: aoSelecionarDestino,
       destinations: const [
-        NavigationRailDestination(icon: Icon(Icons.home), label: Text(' Home')),
         NavigationRailDestination(
           icon: Icon(Icons.shopping_cart),
-          label: Text('Venda'),
+          label: Text(' Vendas'),
+        ),
+        NavigationRailDestination(
+          icon: Icon(Icons.settings),
+          label: Text('Configuração'),
         ),
       ],
     );
