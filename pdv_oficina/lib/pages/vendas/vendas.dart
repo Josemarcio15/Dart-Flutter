@@ -66,23 +66,24 @@ class _VendasState extends State<Vendas> {
                             child: ListaProdutos(),
                           ),
                         ),
+                        SizedBox(width: 10),
                         // Widget codigo de barras
                         Container(
-                          color: Colors.grey,
-                          child: SizedBox(
-                            height: 299,
-                            width: 200,
-                            child: CodigoBarras(),
+                          decoration: BoxDecoration(
+                            color: Colors.pink, // cor do container
+                            borderRadius: BorderRadius.all(Radius.circular(12)),
                           ),
+                          child: SizedBox(width: 200, child: CodigoBarras()),
                         ),
+                        SizedBox(width: 10),
                         // Widget
                         Container(
-                          color: Colors.red,
+                          color: Colors.blue,
                           child: SizedBox(height: 400, width: 100),
                         ),
                         // Widget
                         Container(
-                          color: Colors.lime,
+                          color: Colors.blue,
                           child: SizedBox(height: 400, width: 300),
                         ),
                         // Widget

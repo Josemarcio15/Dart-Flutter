@@ -14,26 +14,28 @@ class _CodigoBarrasState extends State<CodigoBarras> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.amber,
-      padding: EdgeInsets.all(8.0), // dá um espaçamento
+      color: Colors.blue[700],
+      //padding: EdgeInsets.all(8.0), // dá um espaçamento
       child: Stack(
         children: [
-          // fundo só atrás do texto
           Positioned.fill(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-              color: Colors.black, // cor do fundo do texto
+              //padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              color: Colors.blue, // cor do fundo do texto
             ),
           ),
           TextField(
             controller: codigoController,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-            style: TextStyle(color: Colors.white), // cor do texto
+            style: TextStyle(color: Colors.red),
             decoration: InputDecoration(
               labelText: "Código de Barras",
-              labelStyle: TextStyle(fontSize: 20, color: Colors.white70),
-              border: OutlineInputBorder(),
-              filled: false, // não preencher todo o campo
+              labelStyle: TextStyle(fontSize: 20, color: Colors.black),
+              filled: true,
+              fillColor: Colors.white, // fundo do texto
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12), // cantos arredondados
+              ),
             ),
           ),
         ],
