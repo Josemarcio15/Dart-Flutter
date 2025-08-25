@@ -23,7 +23,7 @@ class _CodigoBarrasState extends State<CodigoBarras> {
         maxLines: null,
         decoration: InputDecoration(
           labelText: "Código de Barras",
-          floatingLabelBehavior: FloatingLabelBehavior.always, // sempre no topo
+          floatingLabelBehavior: FloatingLabelBehavior.always,
           labelStyle: TextStyle(fontSize: 25, color: Colors.black),
           filled: true,
           fillColor: Colors.white,

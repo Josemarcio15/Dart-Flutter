@@ -17,55 +17,44 @@ class _ListaProdutosState extends State<ListaProdutos> {
       children: [
         // Cabeçalho fixo
         Container(
-          //color: Colors.blueAccent,
-          //padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.blue[800],
-              borderRadius: BorderRadius.circular(3),
-              // boxShadow: [
-              //   BoxShadow(
-              //     color: Colors.black12,
-              //     blurRadius: 5,
-              //     offset: Offset(0, 2),
-              //   ),
-              // ],
-            ),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(3),
+          ),
 
-            child: Row(
-              children: const [
-                Expanded(
-                  child: Text(
-                    "Nome",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+          child: Row(
+            children: const [
+              Expanded(
+                child: Text(
+                  "Nome",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Expanded(
-                  child: Text(
-                    "Código",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+              ),
+              Expanded(
+                child: Text(
+                  "Código",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Expanded(
-                  child: Text(
-                    "Qtd",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+              ),
+              Expanded(
+                child: Text(
+                  "Qtd",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Expanded(
-                  child: Text(
-                    "Valor",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+              ),
+              Expanded(
+                child: Text(
+                  "Valor",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Expanded(
-                  child: Text(
-                    "Total",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+              ),
+              Expanded(
+                child: Text(
+                  "Total",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
 

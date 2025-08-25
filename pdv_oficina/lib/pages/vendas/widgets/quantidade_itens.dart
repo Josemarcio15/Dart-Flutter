@@ -15,15 +15,9 @@ class _QuantidadeItensState extends State<QuantidadeItens> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue[700],
-      //padding: EdgeInsets.all(8.0), // dá um espaçamento
       child: Stack(
         children: [
-          Positioned.fill(
-            child: Container(
-              //padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-              color: Colors.blue, // cor do fundo do texto
-            ),
-          ),
+          Positioned.fill(child: Container(color: Colors.blue)),
           TextField(
             controller: codigoController,
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -32,9 +26,9 @@ class _QuantidadeItensState extends State<QuantidadeItens> {
               labelText: "Qtd:",
               labelStyle: TextStyle(fontSize: 20, color: Colors.black),
               filled: true,
-              fillColor: Colors.white, // fundo do texto
+              fillColor: Colors.white,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12), // cantos arredondados
+                borderRadius: BorderRadius.circular(12),
               ),
             ),
           ),
