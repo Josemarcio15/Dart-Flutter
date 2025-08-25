@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/codigo_barras.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/lista_produtos.dart';
+import 'package:pdv_oficina/pages/vendas/widgets/quantidade_itens.dart';
 import 'package:pdv_oficina/shared/sidebar.dart';
 
 class Vendas extends StatefulWidget {
@@ -34,6 +35,7 @@ class _VendasState extends State<Vendas> {
               child: Column(
                 children: [
                   Row(
+                    //Coluna 1 linha 1
                     children: [
                       // Widget Caixa Aberto
                       Expanded(
@@ -70,26 +72,30 @@ class _VendasState extends State<Vendas> {
                         // Widget codigo de barras
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.pink, // cor do container
+                            color: Colors.pink,
                             borderRadius: BorderRadius.all(Radius.circular(12)),
                           ),
                           child: SizedBox(width: 200, child: CodigoBarras()),
                         ),
                         SizedBox(width: 10),
-                        // Widget
-                        Container(
-                          color: Colors.blue,
-                          child: SizedBox(height: 400, width: 100),
-                        ),
-                        // Widget
-                        Container(
-                          color: Colors.blue,
-                          child: SizedBox(height: 400, width: 300),
-                        ),
-                        // Widget
-                        Container(
-                          color: Colors.blue,
-                          child: SizedBox(height: 400, width: 300),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              // Widget Quantidade
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.pink,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(12),
+                                  ),
+                                ),
+                                child: SizedBox(
+                                  width: 200,
+                                  child: QuantidadeItens(),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
