@@ -29,7 +29,7 @@ class _QuantidadeItensState extends State<QuantidadeItens> {
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             style: TextStyle(color: Colors.red),
             decoration: InputDecoration(
-              labelText: "QTD:",
+              labelText: "Qtd:",
               labelStyle: TextStyle(fontSize: 20, color: Colors.black),
               filled: true,
               fillColor: Colors.white, // fundo do texto

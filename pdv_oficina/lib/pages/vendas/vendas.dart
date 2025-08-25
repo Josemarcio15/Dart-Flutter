@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pdv_oficina/pages/vendas/widgets/busca_produtos.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/codigo_barras.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/lista_produtos.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/quantidade_itens.dart';
+import 'package:pdv_oficina/pages/vendas/widgets/valor_produto.dart';
 import 'package:pdv_oficina/shared/sidebar.dart';
 
 class Vendas extends StatefulWidget {
@@ -17,9 +19,11 @@ class _VendasState extends State<Vendas> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
-        color: const Color.fromARGB(255, 33, 159, 243),
+        color: Colors.blue,
         child: Row(
           children: [
             Sidebar(
@@ -31,77 +35,71 @@ class _VendasState extends State<Vendas> {
                 });
               },
             ),
-            Expanded(
-              child: Column(
-                children: [
-                  Row(
-                    //Coluna 1 linha 1
-                    children: [
-                      // Widget Caixa Aberto
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.blue, width: 10),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
+            Column(
+              children: [
+                //Widget Lista de Produtos
+                Container(
+                  margin: const EdgeInsets.all(8.0),
+                  height: screenHeight * 0.8,
+                  width: screenWidth * 0.4,
+                  child: ListaProdutos(),
+                ),
+              ],
+            ),
 
-                          child: SizedBox(
-                            height: 50,
-                            child: Center(child: Text("CAIXA ABERTO")),
-                          ),
-                        ),
-                      ),
-                    ],
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 8),
+                //widget busca itens
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-
-                  Expanded(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Widget Lista de Produtos
-                        Container(
-                          color: Colors.blue,
-                          child: SizedBox(
-                            width: 700,
-                            height: 500,
-                            child: ListaProdutos(),
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                        // Widget codigo de barras
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.pink,
-                            borderRadius: BorderRadius.all(Radius.circular(12)),
-                          ),
-                          child: SizedBox(width: 200, child: CodigoBarras()),
-                        ),
-                        SizedBox(width: 10),
-                        Expanded(
-                          child: Row(
-                            children: [
-                              // Widget Quantidade
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.pink,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(12),
-                                  ),
-                                ),
-                                child: SizedBox(
-                                  width: 200,
-                                  child: QuantidadeItens(),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                  width: screenWidth * 0.2,
+                  child: IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Dialog(
+                            child: SizedBox(
+                              width: 800,
+                              height: 500,
+                              child: BuscaProdutos(),
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: 10),
+                //widget Codigo de Barras
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  height: screenHeight * 0.1,
+                  width: screenWidth * 0.2,
+                  child: CodigoBarras(),
+                ),
+                SizedBox(height: 10),
+                //widget quantidade de itens
+                SizedBox(
+                  height: screenHeight * 0.05,
+                  width: screenWidth * 0.1,
+                  child: QuantidadeItens(),
+                ),
+                SizedBox(
+                  height: screenHeight * 0.1,
+                  width: screenWidth * 0.2,
+                  child: ValorProduto(),
+                ),
+              ],
             ),
           ],
         ),
