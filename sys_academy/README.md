@@ -1,6 +1,6 @@
 # sys_academy
 
-Aprendendo a criar um CRUD com lista de exercícios e mais
+Aprendendo a criar um CRUD com lista de exercícios e mais #
 
 ---
 
