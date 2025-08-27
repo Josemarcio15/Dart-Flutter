@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/busca_produtos.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/codigo_barras.dart';
+import 'package:pdv_oficina/pages/vendas/widgets/label_teclas.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/lista_produtos.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/quantidade_itens.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/valor_produto.dart';
@@ -98,6 +99,28 @@ class _VendasState extends State<Vendas> {
                   height: screenHeight * 0.1,
                   width: screenWidth * 0.2,
                   child: ValorProduto(),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                SizedBox(
+                  height: screenHeight * 0.01,
+                  width: screenWidth * 0.10,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                SizedBox(height: 8),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.white,
+                  ),
+                  height: screenHeight * 0.2,
+                  width: screenWidth * 0.2,
+                  child: LabelTeclas(),
                 ),
               ],
             ),
