@@ -6,6 +6,7 @@ import 'package:pdv_oficina/pages/vendas/widgets/lista_produtos.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/quantidade_itens.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/troco.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/valor_produto.dart';
+import 'package:pdv_oficina/pages/vendas/widgets/valor_recebido.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/valor_total.dart';
 import 'package:pdv_oficina/shared/sidebar.dart';
 
@@ -25,140 +26,152 @@ class _VendasState extends State<Vendas> {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        color: Colors.blue,
-        child: Row(
-          children: [
-            Sidebar(
-              indiceSelecionado: indiceSelecionado,
-              expandida: expandida,
-              aoSelecionarDestino: (index) {
-                setState(() {
-                  indiceSelecionado = index;
-                });
-              },
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //Widget Lista de Produtos
-                Container(
-                  margin: const EdgeInsets.all(8.0),
-                  height: screenHeight * 0.8,
-                  width: screenWidth * 0.4,
-                  child: ListaProdutos(),
+      backgroundColor: Colors.blue,
+      body: Row(
+        children: [
+          Sidebar(
+            indiceSelecionado: indiceSelecionado,
+            expandida: expandida,
+            aoSelecionarDestino: (index) {
+              setState(() {
+                indiceSelecionado = index;
+              });
+            },
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //Widget Lista de Produtos
+              Container(
+                margin: const EdgeInsets.all(8.0),
+                height: screenHeight * 0.8,
+                width: screenWidth * 0.4,
+                child: ListaProdutos(),
+              ),
+              SizedBox(height: 8),
+              //Widget Atalhos de teclas
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.white,
                 ),
-                SizedBox(height: 8),
-                //Widget Atalhos de teclas
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.white,
-                  ),
-                  height: screenHeight * 0.15,
-                  width: screenWidth * 0.2,
-                  child: LabelTeclas(),
-                ),
-              ],
-            ),
+                height: screenHeight * 0.15,
+                width: screenWidth * 0.2,
+                child: LabelTeclas(),
+              ),
+            ],
+          ),
 
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 8),
-                //widget busca itens
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  width: screenWidth * 0.2,
-                  child: IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return Dialog(
-                            child: SizedBox(
-                              width: 800,
-                              height: 500,
-                              child: BuscaProdutos(),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 8),
+              //widget busca itens
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                SizedBox(height: 10),
-                //widget Codigo de Barras
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  height: screenHeight * 0.1,
-                  width: screenWidth * 0.2,
-                  child: CodigoBarras(),
+                width: screenWidth * 0.2,
+                child: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Dialog(
+                          child: SizedBox(
+                            width: 800,
+                            height: 500,
+                            child: BuscaProdutos(),
+                          ),
+                        );
+                      },
+                    );
+                  },
                 ),
-                SizedBox(height: 10),
-                //widget quantidade de itens
-                SizedBox(
-                  height: screenHeight * 0.05,
-                  width: screenWidth * 0.1,
-                  child: QuantidadeItens(),
+              ),
+              SizedBox(height: 8),
+              //widget Codigo de Barras
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                SizedBox(height: 8),
-                SizedBox(
-                  height: screenHeight * 0.1,
-                  width: screenWidth * 0.2,
-                  child: ValorProduto(),
+                height: screenHeight * 0.1,
+                width: screenWidth * 0.2,
+                child: CodigoBarras(),
+              ),
+              SizedBox(height: 10),
+              //widget quantidade de itens
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                SizedBox(height: 8),
-                SizedBox(
-                  height: screenHeight * 0.1,
-                  width: screenWidth * 0.2,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        height: screenHeight * 0.1,
-                        width: screenWidth * 0.097,
-                        child: ValorTotal(),
-                      ),
-                      SizedBox(width: 8),
-                      SizedBox(
-                        height: screenHeight * 0.1,
-                        width: screenWidth * 0.097,
-                        child: Troco(),
-                      ),
-                    ],
-                  ),
+                height: screenHeight * 0.05,
+                width: screenWidth * 0.1,
+                child: QuantidadeItens(),
+              ),
+              SizedBox(height: 8),
+              //Widget ValorProduto
+              SizedBox(
+                height: screenHeight * 0.1,
+                width: screenWidth * 0.2,
+                child: ValorProduto(),
+              ),
+              SizedBox(height: 8),
+              //Widget ValorRecebido
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                // SizedBox(
-                //   height: screenHeight * 0.1,
-                //   width: screenWidth * 0.2,
-                //   child: ,
-                // ),
-              ],
-            ),
+                height: screenHeight * 0.1,
+                width: screenWidth * 0.2,
+                child: ValorRecebido(),
+              ),
+              SizedBox(height: 8),
+              //Widget valor/troco
+              SizedBox(
+                height: screenHeight * 0.1,
+                width: screenWidth * 0.2,
+                child: Row(
+                  children: [
+                    // VALOR TOTAL
+                    SizedBox(
+                      height: screenHeight * 0.1,
+                      width: screenWidth * 0.094,
+                      child: ValorTotal(),
+                    ),
+                    SizedBox(width: 8),
+                    // TROCO
+                    SizedBox(
+                      height: screenHeight * 0.1,
+                      width: screenWidth * 0.094,
+                      child: Troco(),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
 
-            Column(
-              children: [
-                // SizedBox(height: 8),
-                // Container(
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(12),
-                //     color: Colors.white,
-                //   ),
-                //   height: screenHeight * 0.2,
-                //   width: screenWidth * 0.2,
-                //   child: LabelTeclas(),
-                // ),
-              ],
-            ),
-          ],
-        ),
+          Column(
+            children: [
+              // SizedBox(height: 8),
+              // Container(
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(12),
+              //     color: Colors.white,
+              //   ),
+              //   height: screenHeight * 0.2,
+              //   width: screenWidth * 0.2,
+              //   child: LabelTeclas(),
+              // ),
+            ],
+          ),
+        ],
       ),
     );
   }
