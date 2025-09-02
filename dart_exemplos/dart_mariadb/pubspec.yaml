@@ -1,0 +1,9 @@
+name: dart_mariadb
+description: A simple Dart CLI project to connect to MariaDB
+version: 0.0.1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  mysql1:
+  dotenv: ^4.2.0
