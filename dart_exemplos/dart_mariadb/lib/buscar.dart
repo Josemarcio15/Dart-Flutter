@@ -1,4 +1,4 @@
-import "query.dart";
+import "./db/query.dart";
 
 void main() async {
   var resultados = await imprimir();
