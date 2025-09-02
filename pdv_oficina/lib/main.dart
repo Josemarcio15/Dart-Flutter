@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pdv_oficina/pages/login/login.dart';
+//import 'package:pdv_oficina/pages/login/login.dart';
+import 'package:pdv_oficina/pages/vendas/vendas.dart';
 //import 'package:pdv_oficina/pages/vendas/vendas.dart';
 
 void main() {
@@ -16,6 +17,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Login());
+    return MaterialApp(home: Vendas());
   }
 }

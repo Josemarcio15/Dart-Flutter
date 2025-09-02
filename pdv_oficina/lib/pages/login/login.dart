@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/campo_entrada.dart'; // Importe seu widget customizado aqui
+import 'widgets/campo_entrada.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -40,44 +40,17 @@ class _LoginState extends State<Login> {
             children: [
               SizedBox(
                 width: 350,
-                child: CampoEntrada(
-                  controlador: emailController,
-                  rotulo: 'E-mail',
-                  dica: 'Digite seu e-mail',
-                  iconeInicial: const Icon(Icons.email),
-                  validador: (valor) {
-                    if (valor == null || valor.isEmpty)
-                      return 'E-mail obrigatório';
-                    if (!valor.contains('@')) return 'E-mail inválido';
-                    return null;
-                  },
-                ),
+                child: CampoEntrada.email(controlador: emailController),
               ),
               const SizedBox(height: 10),
               SizedBox(
                 width: 350,
-                child: CampoEntrada(
+                child: CampoEntrada.senha(
                   controlador: senhaController,
-                  rotulo: 'Senha',
-                  dica: 'Digite sua senha',
-                  iconeInicial: const Icon(Icons.password),
-                  validador: (valor) {
-                    if (valor == null || valor.isEmpty)
-                      return 'Senha obrigatória';
-                    if (valor.length < 6) return 'Senha muito curta';
-                    return null;
+                  senhaVisivel: _senhaVisivel,
+                  alternarVisibilidade: () {
+                    setState(() => _senhaVisivel = !_senhaVisivel);
                   },
-                  obscureText: !_senhaVisivel,
-                  iconeFinal: IconButton(
-                    icon: Icon(
-                      _senhaVisivel ? Icons.visibility : Icons.visibility_off,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        _senhaVisivel = !_senhaVisivel;
-                      });
-                    },
-                  ),
                 ),
               ),
               const SizedBox(height: 20),

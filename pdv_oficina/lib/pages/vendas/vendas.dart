@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/busca_produtos.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/codigo_barras.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/label_teclas.dart';
-//import 'package:pdv_oficina/pages/vendas/widgets/lista_produtos.dart';
+import 'package:pdv_oficina/pages/vendas/widgets/lista_produtos.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/quantidade_itens.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/troco.dart';
 import 'package:pdv_oficina/pages/vendas/widgets/valor_produto.dart';
@@ -42,12 +42,12 @@ class _VendasState extends State<Vendas> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //Widget Lista de Produtos
-              // Container(
-              //   margin: const EdgeInsets.all(8.0),
-              //   height: screenHeight * 0.8,
-              //   width: screenWidth * 0.4,
-              //   child: ListaProdutos(),
-              // ),
+              Container(
+                margin: const EdgeInsets.all(8.0),
+                height: screenHeight * 0.8,
+                width: screenWidth * 0.4,
+                child: ListaProdutos(),
+              ),
               SizedBox(height: 8),
               //Widget Atalhos de teclas
               Container(
