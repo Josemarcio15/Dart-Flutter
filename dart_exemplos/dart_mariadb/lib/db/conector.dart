@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:dotenv/dotenv.dart';
 import 'package:mysql1/mysql1.dart';
 
