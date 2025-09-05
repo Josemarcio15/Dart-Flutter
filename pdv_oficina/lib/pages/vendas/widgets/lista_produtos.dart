@@ -112,22 +112,9 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:pdv_oficina/services/produto_service.dart';
+import 'package:pdv_oficina/models/produto.dart';
 
-class Produto {
-  final int id;
-  final String nome;
-  final int qtd;
-  final double valor;
-
-  Produto({
-    required this.id,
-    required this.nome,
-    required this.qtd,
-    required this.valor,
-  });
-
-  double get total => qtd * valor;
-}
+double get total => qtd * valor;
 
 class ListaProdutos extends StatefulWidget {
   const ListaProdutos({super.key});
