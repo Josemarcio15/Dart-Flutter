@@ -170,7 +170,7 @@ class _ListaProdutosState extends State<ListaProdutos> {
 
     return Column(
       children: [
-        // Cabeçalho fixo
+        // Cabeçalho fixo lista
         Container(
           decoration: BoxDecoration(
             color: Colors.white,
