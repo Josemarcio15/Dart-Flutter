@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lista_produtos/lista_compras.dart';
-import 'package:lista_produtos/vendas_page.dart';
+import 'package:lista_produtos/pages/vendas_page.dart';
 
 void main() {
   runApp(const MyApp());

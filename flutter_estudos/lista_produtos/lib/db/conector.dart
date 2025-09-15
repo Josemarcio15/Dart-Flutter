@@ -1,6 +1,5 @@
 import 'package:dotenv/dotenv.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/material.dart';
 import 'package:mysql1/mysql1.dart';
 
 Future<MySqlConnection> conectarBanco() async {
