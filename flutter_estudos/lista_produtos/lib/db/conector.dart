@@ -1,5 +1,6 @@
 import 'package:dotenv/dotenv.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:mysql1/mysql1.dart';
 
 Future<MySqlConnection> conectarBanco() async {
@@ -18,4 +19,13 @@ Future<MySqlConnection> conectarBanco() async {
     db: db,
     password: pass,
   );
+  MySqlConnection? conn;
+  try {
+    conn = await MySqlConnection.connect(config);
+    debugPrint("Conexao bem sucedida");
+    return conn;
+  } catch (e) {
+    debugPrint("Erro");
+    rethrow;
+  }
 }
